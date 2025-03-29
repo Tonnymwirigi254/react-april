@@ -1,27 +1,28 @@
 import { useEffect, useState } from "react"
+import "./counterApp.css"
 
 const CounterAppComponent = () => {
-    const [counter, setCounter] = useState(localStorage.getItem("counter"))
-    const [countBy, setCountBy] = useState(1)
+    const [counter, setCounter] = useState(Number(localStorage.getItem("counter")))
+    const [countBy, setCountBy] = useState(Number(localStorage.getItem("countBy")))
     const [error, setError] = useState("")
     const [isNegative, setIsNegative] = useState(localStorage.getItem("isNegative"))
 
-    const addCounter = () => {
-        setCounter(prev => prev += countBy)
-    }
+    /*
+        initCount will initiliaze the counter to 1 when page loads for the first time 
+        initCountBy will initialize the countBy to 1 when page loads for the first time 
+    */
+    const initCounter = 1
+    const initCountBy = 1
+    const errorMsg = "Sorry, I am not programmed to handle both negative and positive numbers, Click below to handle negative numbers."
 
-    const subCounter = () => {
-        if(((Number(counter) - countBy < 0) || counter < 0) && !!isNegative === false)  {
-            setCounter(counter)
-            setError("Sorry, I am not programmed to handle negative number, click here to handle negative numbers!")
-        } else {
-            setCounter(prev => prev -= countBy)
-        }
-    }
+    const addCounter = () => setCounter(prev => prev += countBy)
+
+    const subCounter = () => (((Number(counter) - countBy < 0)) && !!isNegative === false) ? setError(errorMsg): setCounter(prev => prev -= countBy)
 
     const handleCountBy = (e) => {
         const num = Number(e.target.value)
         setCountBy(num)
+        localStorage.setItem("countBy",num)
     }
 
     const handleReset = () => {
@@ -32,30 +33,51 @@ const CounterAppComponent = () => {
     const handleNegative = () => {
         setIsNegative(true)
         localStorage.setItem("isNegative", true)
+        setError("")
     }
 
     const handlePositive = () => {  
         if((Number(counter) - countBy <= 0)) {
             setCounter(0)
         }
+
         setIsNegative(false)     
         localStorage.setItem("isNegative", false)
     }
 
-    useEffect(() => {
+    // handleInitState function will initialize our program setting default values in localstorage
+    const handleInitState = () => {
         const isNegativeSet = localStorage.getItem("isNegative")
         if(!!isNegativeSet === false) {
             localStorage.setItem("isNegative", false)
         }
+
         setError("")
-    }, [counter])
+        localStorage.setItem("counter", counter)
+
+        const count = localStorage.getItem("counter")
+        if(Boolean(count) === false) {
+            localStorage.setItem("counter", initCounter)
+        }
+
+        const countBy = localStorage.getItem("countBy")
+        if(Boolean(countBy) === false) {
+            localStorage.setItem("countBy", initCountBy)
+        } else {
+            localStorage.setItem("countBy", countBy)
+        }
+    }
+
+    useEffect(() => {
+        handleInitState()
+    }, [counter, countBy])
 
     return (
-        <>
+        <div className="counter-app-container">
             <h1>Counter App</h1>
 
-            <div>
-                <label htmlFor="countBy">Add counter by:</label>
+            <div className="counter-app-form">
+                <label htmlFor="countBy"><span>Add counter by:</span></label> <br/>
                 <input id="countBy" value={countBy} onChange={handleCountBy}/>
             </div>
 
@@ -63,20 +85,26 @@ const CounterAppComponent = () => {
                 <>
                     <br/>
                     <small>{error}</small>
-                    <button onClick={handleNegative}>Click Me</button>
+                    <br/>
+                    <button 
+                        className="counter-app-click-me" 
+                        onClick={handleNegative}
+                    >
+                        Click Me!
+                    </button>
                 </>
              }
 
-            <p>Counter: {counter}</p>
+            <p className="counter-app-counter">Counter: <span>{counter}</span> </p>
 
-            <div>
+            <div className="counter-app-btn">
                 <button onClick={addCounter}>Add</button>
                 <button onClick={subCounter}>Sub</button>
                 <button onClick={handleReset}>Reset</button>
                 <button onClick={handleNegative}>Negative + Positive</button>
                 <button onClick={handlePositive}>Positive Only</button>
             </div>         
-        </>
+        </div>
     )
 }
 

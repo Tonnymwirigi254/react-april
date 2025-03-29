@@ -1,0 +1,59 @@
+.counter-app-container {
+    padding: 16px;
+    background-color: navy;
+    color: #fff;
+    text-align: center;
+}
+.counter-app-form input{
+    max-width: 62px;
+    padding: 18px 12px;
+    border: none;
+    border-radius: 12px;
+    margin: 18px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+.counter-app-click-me {
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin: 8px;
+    background-color: rgb(115, 124, 96);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 22px;
+}
+.counter-app-click-me:hover {
+    background-color: #fff;
+    color: #000;
+    transition: ease-in-out .3s;
+}
+.counter-app-counter {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.counter-app-counter span {
+    color: gold;
+}
+.counter-app-btn {
+    padding: 16px;
+}
+.counter-app-btn button {
+    padding: 18px 12px;
+    margin: 8px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(218, 165, 32, 0.747);
+    font-weight: bolder;
+    letter-spacing: 1px;
+    min-width: 72px;
+    cursor: pointer;
+    color: #fff;
+}
+.counter-app-btn button:hover {
+    background-color: #fff;
+    color: #000;
+    transition: ease-in-out .3s;
+}
