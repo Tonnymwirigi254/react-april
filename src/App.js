@@ -6,12 +6,18 @@ import "./App.css"
 
 function App() {
   return (
-    <div>
-        <h2>1. Click Add/Sub Button to change counter</h2>
-        <CounterAppComponent/>
+    <main className='main-component'>
+        <h2 className='main-h2-header'>April-Fest React Projects</h2>
+        <details>
+            <summary>
+                Counter App
+            </summary>
+            <CounterAppComponent/>
+        </details>
         <h2>2. Click Button to switch color</h2>
         <ChangeColorCompoent/>
-    </div>
+        <h2>3. Character Counter</h2>
+    </main>
   );
 }
 
