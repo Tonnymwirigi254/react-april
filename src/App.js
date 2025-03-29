@@ -3,6 +3,7 @@ import "./App.css"
 import ChangeColorCompoent from './components/changeColor';
 import CounterAppComponent from './components/counterApp';
 import CharacterCounterComponent from './components/characterCounter';
+import DigitalClockComponent from "./components/digitalClock";
 
 function App() {
   return (
@@ -25,6 +26,12 @@ function App() {
                 Character Count
             </summary>
             <CharacterCounterComponent/>
+        </details>
+        <details>
+            <summary>
+               Digital Clock
+            </summary>
+            <DigitalClockComponent/>
         </details>
     </main>
   );

@@ -1,0 +1,15 @@
+.digital-clock-container {
+    padding: 32px;
+    background-color: rgba(0, 0, 0, 0.801);
+    color: gold;
+}
+.digital-clock-elements span {
+    font-size: 72px;
+    font-weight: bolder;
+    letter-spacing: 12px;
+}
+.digital-clock-elements  {
+    text-align: center;
+    margin-top: 18px;
+    line-height: 42px;
+}
