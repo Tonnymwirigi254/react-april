@@ -1,0 +1,41 @@
+.color-container {
+    height: 300px;
+    width: 100vw;
+}
+h1 {
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.h1-Dark {
+    color: #fff;
+}
+.h1-Light {
+    color: #000;
+}
+.Light {
+    background-color: rgba(240, 248, 255, 0.616);
+}
+.Dark {
+    background-color: rgba(0, 0, 0, 0.856);
+}
+.btn-container {
+    text-align: right;
+}
+.btn-container button {
+    padding: 16px;
+    margin: 8px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 900;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.btn-Light {
+    background-color: rgba(0, 0, 0, 0.856);
+    color: #fff;
+}
+.btn-Dark {
+    background-color: rgb(233, 238, 243);
+    color: black;
+}
