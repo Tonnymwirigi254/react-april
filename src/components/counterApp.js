@@ -75,9 +75,9 @@ const CounterAppComponent = () => {
     return (
         <div className="counter-app-container">
             <h1>Counter App</h1>
-
+            <br/>
             <div className="counter-app-form">
-                <label htmlFor="countBy"><span>Add counter by:</span></label> <br/>
+                <label htmlFor="countBy"><span>Add counter by :</span></label> <br/>
                 <input id="countBy" value={countBy} onChange={handleCountBy}/>
             </div>
 
@@ -98,11 +98,16 @@ const CounterAppComponent = () => {
             <p className="counter-app-counter">Counter: <span>{counter}</span> </p>
 
             <div className="counter-app-btn">
-                <button onClick={addCounter}>Add</button>
-                <button onClick={subCounter}>Sub</button>
-                <button onClick={handleReset}>Reset</button>
-                <button onClick={handleNegative}>Negative + Positive</button>
-                <button onClick={handlePositive}>Positive Only</button>
+                <div>
+                    <button onClick={addCounter}>Add</button>
+                    <button onClick={subCounter}>Sub</button>
+                </div>
+                <br/>
+                <div>
+                    <button onClick={handleReset}>Reset</button>
+                    <button onClick={handleNegative}>Negative + Positive</button>
+                    <button onClick={handlePositive}>Positive Only</button>
+                </div>                
             </div>         
         </div>
     )
