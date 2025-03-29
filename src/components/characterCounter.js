@@ -28,6 +28,12 @@ const CharacterCounterComponent = () => {
         }
     }
 
+    const handleClearText = () => {
+        localStorage.setItem("character", "")
+        setCountCharacter(0)
+        setText("")
+    }
+
     useEffect(() => {
         const char = localStorage.getItem("character")
         charactersPresent(char)
@@ -37,13 +43,14 @@ const CharacterCounterComponent = () => {
         <div>
             <div className="character-counter-container">
             <h1>Character Counter</h1>
-                <p>{countCharacter} Characters</p>
+                <p>{countCharacter} characters</p>
                 <div className="character-counter-form">
                     <label htmlFor="character-counter">
                         Write message below to count characters:
                     </label> 
                     <br/>
                     <textarea id="character-counter" value={text} placeholder="Type message here..." onChange={handleCharacters}></textarea>
+                    <button onClick={handleClearText}>Clear Text Box</button>
                 </div>
             </div>
         </div>

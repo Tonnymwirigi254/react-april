@@ -18,3 +18,19 @@
     border: none;
     padding: 18px 16px;
 }
+.character-counter-form button {
+    padding: 18px 12px;
+    margin-top: 12px;
+    border-radius: 6px;
+    background-color: #9b6666;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+.character-counter-form button:hover {
+    transition: ease-in-out .3s;
+    background-color: rgb(88, 167, 94);
+    color: #fff;
+
+}
