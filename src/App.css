@@ -11,10 +11,13 @@ h2 {
 }
 summary {
   cursor: pointer;
-  background-color: aqua;
+  background-color: rgba(4, 21, 94, 0.849);
   padding: 18px;
   font-size: 24px;
   font-weight: 800;
+  color: #fff;
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 .main-component .main-h2-header {
   padding: 18px 12px;

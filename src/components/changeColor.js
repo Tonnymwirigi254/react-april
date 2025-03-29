@@ -33,7 +33,7 @@ const ChangeColorCompoent = () => {
                 >
                     {mode === LightMode ? DarkMode : LightMode} mode
                 </button>
-                <h1 className={`h1-${mode}`}>Toggle between Dark Mode and Light Mode</h1>
+                <h1 className={`h1-${mode}`}>{mode} Mode</h1>
             </div>        
         </div>
     )

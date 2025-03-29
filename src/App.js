@@ -14,8 +14,12 @@ function App() {
             </summary>
             <CounterAppComponent/>
         </details>
-        <h2>2. Click Button to switch color</h2>
-        <ChangeColorCompoent/>
+        <details>
+            <summary>
+                Switch Color
+            </summary>
+            <ChangeColorCompoent/>
+        </details>
         <h2>3. Character Counter</h2>
     </main>
   );
