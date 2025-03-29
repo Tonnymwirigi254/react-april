@@ -1,8 +1,8 @@
-// import Chat from './components/chat';
+import "./App.css"
+
 import ChangeColorCompoent from './components/changeColor';
 import CounterAppComponent from './components/counterApp';
-
-import "./App.css"
+import CharacterCounterComponent from './components/characterCounter';
 
 function App() {
   return (
@@ -20,7 +20,12 @@ function App() {
             </summary>
             <ChangeColorCompoent/>
         </details>
-        <h2>3. Character Counter</h2>
+        <details>
+            <summary>
+                Character Count
+            </summary>
+            <CharacterCounterComponent/>
+        </details>
     </main>
   );
 }
