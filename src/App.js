@@ -4,6 +4,7 @@ import ChangeColorCompoent from './components/changeColor';
 import CounterAppComponent from './components/counterApp';
 import CharacterCounterComponent from './components/characterCounter';
 import DigitalClockComponent from "./components/digitalClock";
+import TodoListComponent from "./components/todoList";
 
 function App() {
   return (
@@ -32,6 +33,12 @@ function App() {
                Digital Clock
             </summary>
             <DigitalClockComponent/>
+        </details>
+        <details>
+            <summary>
+              To-Do List
+            </summary>
+            <TodoListComponent/>
         </details>
     </main>
   );
